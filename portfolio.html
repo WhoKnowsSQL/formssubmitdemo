@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <title>ByteHue - Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="bannerPorto">
+      <div class="navbar">
+        <a href="index.html">
+            <img src="ByteHue.png" alt="Logo" class="logo">
+        </a>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div>
+    <section class="hidden">
+        <div class="main">
+            <h1>My <span>Portfolio</span></h1>
+            <p>Some of my work using Blender, Adobe Creative Cloud and Live2d.</p>
+            <div class="gallery">
+                <div class="img">
+                    <a href="1.png" target="_blank" download>
+                    <img src="1.png" />
+                </a>
+                </div>
+                <div class="img">
+                    <a href="2.png" target="_blank" download>
+                    <img src="2.png" />
+                </a>
+                </div>
+                <div class="img">
+                    <a href="3.png" target="_blank" download>
+                    <img src="3.png" />
+                </a>
+                </div>
+                <div class="img">
+                    <a href="4.png" target="_blank" download>
+                    <img src="4.png" />
+                </a>
+                </div>
+                <div class="img">
+                    <a href="5.png" target="_blank" download>
+                    <img src="5.png" />
+                </a>
+                </div>
+                <div class="img">
+                    <a href="6.gif" target="_blank" download>
+                    <img src="6.gif" />
+                </a>
+                </div>
+                <div class="img">
+                    <a href="7.gif" target="_blank" download>
+                    <img src="7.gif" />
+                </a>
+                </div>
+                <div class="img">
+                    <a href="8.gif" target="_blank" download>
+                    <img src="8.gif" />
+                </a>
+                </div>
+                <div class="img">
+                    <a href="9.gif" target="_blank" download>
+                    <img src="9.gif" />
+                </a>
+                </div>
+                <div class="img">
+                    <a href="10.png" target="_blank" download>
+                    <img src="10.png" />
+                </a>
+                </div>
+            </div>
+        </div>
+        <i class="fa fa-expand"></i>
+        <script>
+            const h1Portfolio = document.querySelector(".main h1");
+            const strTextPortfolio = h1Portfolio.textContent;
+            const splitTextPortfolio = strTextPortfolio.split("");
+        
+            // Clear the existing content
+            h1Portfolio.innerHTML = '';
+        
+            for (let i = 0; i < splitTextPortfolio.length; i++) {
+              // Check if the current character is a space
+              if (splitTextPortfolio[i] === ' ') {
+                h1Portfolio.innerHTML += '<span>&nbsp;</span>'; // Add a non-breaking space
+              } else {
+                h1Portfolio.innerHTML += "<span class='span3'>" + splitTextPortfolio[i] + "</span>";
+              }
+            }
+        
+            let charPortfolio = 0;
+            let timerPortfolio = setInterval(onTickPortfolio, 50);
+        
+            function onTickPortfolio() {
+              const spanPortfolio = h1Portfolio.querySelectorAll('span')[charPortfolio];
+              spanPortfolio.classList.add('rainbow2');
+              spanPortfolio.classList.add('fade');
+              charPortfolio++;
+              if (charPortfolio === splitTextPortfolio.length) {
+                completePortfolio();
+                return;
+              }
+            }
+        
+            function completePortfolio() {
+              clearInterval(timerPortfolio);
+              timerPortfolio = null;
+            }
+            const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+  console.log(entry)
+  if (entry.isIntersecting) {
+    entry.target.classList.add('show');
+  } else {
+    entry.target.classList.remove('show');
+  }
+});
+});
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+          </script>
+          </section>
+    </body>
+    </html>
