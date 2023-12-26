@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <title>ByteHue - About</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="bannerAbout">
+      <div class="navbar">
+        <a href="index.html">
+            <img src="ByteHue.png" alt="Logo" class="logo">
+        </a>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div>
+    <section class="hidden">
+        <div class="repositioned-text">
+        <div class="about">
+            <h1>About Me</h1>
+            <p>I'm Sherry, a passionate web enthusiast with a knack<br> for weaving digital wonders. In the realm of ones and zeros,<br>I sculpt captivating online experiences that seamlessly<br> blend aesthetics with functionality.</p>
+            <p>Whether it's crafting visually stunning<br>interfaces or architecting the backend magic that brings websites<br> to life, I thrive on the dynamic dance between creativity and code.<br>Immerse yourself in my diverse projects, each telling a unique<br> story of design ingenuity and technical finesse.</p>
+            <img src="Newprmorepre.png" class="myimage">
+        </div>
+
+        </div>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+  console.log(entry)
+  if (entry.isIntersecting) {
+    entry.target.classList.add('show');
+  } else {
+    entry.target.classList.remove('show');
+  }
+});
+});
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+        </script>
+    </section>
+</body>
+</html>
