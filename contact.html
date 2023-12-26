@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <title>ByteHue - Contact</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="bannerContact">
+      <div class="navbar">
+        <a href="index.html">
+            <img src="ByteHue.png" alt="Logo" class="logo">
+        </a>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div>
+        <section class="hidden">
+            <div class="contacter">
+                <h1>Get in touch</h1> 
+            </div>
+            <div class="after">
+                <h1></h1>
+            </div>
+            <div class="connect">
+                <h1>Online Inquiry</h1>
+            </div>
+            <form class="contact-form" action="https://formsubmit.co/sherlott.h@gmail.com" method="POST">
+           <input type="text" name="first" placeholder="Full Name" autocomplete="off" required>
+           <input type="text" name="company" placeholder="Company (optional)" autocomplete="off">
+           <input type="email" name="email" placeholder="Email" autocomplete="off" required>
+           <textarea rows="5" cols="60" name="message" placeholder="Your message" autocomplete="off" required></textarea>
+        </div>
+        <section class="hidden">
+        <button type="submit" class="contact-button">
+            <span class="overlay2"></span>
+            SUBMIT
+        </button>
+    </section>
+    </form>
+        <div class="eyes-container">
+        <div class="eyes">
+            <div class="eye">
+                <div class="ball"></div>
+            </div>
+        </div>
+    </div>
+            <script>
+                const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+  console.log(entry)
+  if (entry.isIntersecting) {
+    entry.target.classList.add('show');
+  } else {
+    entry.target.classList.remove('show');
+  }
+});
+});
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
+var balls = document.getElementsByClassName("ball");
+document.onmousemove = function(){
+    var x = event.clientX * 100 / window.innerWidth + "%";
+    var y = event.clientY * 100 / window.innerHeight + "%";
+
+    for(var i=0;i<2;i++){
+        balls[i].style.left = x;
+        balls[i].style.top = y;
+        balls[i].style.transform = "translate(-"+x+", -"+y+")";
+
+    }
+}
+
+            </script>
+        </section>
+</body>
+</html>
