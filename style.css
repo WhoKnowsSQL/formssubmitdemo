@@ -542,6 +542,30 @@ textarea:focus-within {
     transform: translateY(-50%);
     width: 80%;
 }
+.thanks h1{
+    color: #fff;
+    font-family: monospace;
+    font-size: 100px;
+    text-align: left;
+    padding: 10 100px;
+    font-weight: 100;
+    line-height: 30px;
+    margin: 20 auto;
+    margin-top: 200px;
+    margin-left: 300px;
+}
+.success p{
+    color: #fff;
+    font-family: monospace;
+    font-size: 50px;
+    text-align: left;
+    padding: 10 100px;
+    font-weight: 100;
+    line-height: 30px;
+    margin: 20 auto;
+    margin-top: 150px;
+    margin-left: 300px;
+}
 
 @media (max-width: 812px)
 {
